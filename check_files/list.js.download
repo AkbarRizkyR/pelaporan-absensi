@@ -1,0 +1,6 @@
+function list_t()
+{ 
+      var a=document.getElementById("cc").scrollTop; 
+      var b=document.getElementById("cc").scrollLeft; 
+      document.getElementById("hh").scrollLeft=b; 
+  } 

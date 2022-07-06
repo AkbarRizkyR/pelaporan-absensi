@@ -1,0 +1,234 @@
+
+<!-- saved from url=(0047)http://192.168.1.201/csl/query?first=41&last=56 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title></title>
+		<meta http-equiv="Content-Type" content="text/html;">
+		<link href="./Secutime.css" type="text/css" rel="stylesheet">
+		<link href="./list.css" type="text/css" rel="stylesheet">
+		<script language="javascript" src="./list.js.download"></script>
+		<script language="javascript" src="./popcalendar.js.download"></script></head><body bgcolor="#ffffff"><div onclick="bShow=true" id="calendar" style="z-index:+999;position:absolute;visibility:hidden;"><table width="250" style="font-size:11px;border-width:1;border-style:solid;border-color:#666666;font-size:11px}" bgcolor="#ffffff"><tbody><tr bgcolor="#6495ED"><td><table width="248"><tbody><tr><td style="padding:2px;font-family:arial; font-size:11px;"><font color="#ffffff"><b><span id="caption"><span id="spanLeft" style="border-style:solid;border-width:1;border-color:#3366FF;cursor:hand" onmouseover="swapImage(&quot;changeLeft&quot;,&quot;up.gif&quot;);this.style.borderColor=&quot;#88AAFF&quot;;" onclick="javascript:decMonth()" onmouseout="clearInterval(intervalID1);swapImage(&quot;changeLeft&quot;,&quot;up.gif&quot;);this.style.borderColor=&quot;#3366FF&quot;;" onmousedown="clearTimeout(timeoutID1);timeoutID1=setTimeout(&quot;StartDecMonth()&quot;,500)" onmouseup="clearTimeout(timeoutID1);clearInterval(intervalID1)">&nbsp;<img id="changeLeft" src="./up.gif" border="0">&nbsp;</span>&nbsp;<span id="spanRight" style="border-style:solid;border-width:1;border-color:#3366FF;cursor:hand" onmouseover="swapImage(&quot;changeRight&quot;,&quot;down.gif&quot;);this.style.borderColor=&quot;#88AAFF&quot;;" onmouseout="clearInterval(intervalID1);swapImage(&quot;changeRight&quot;,&quot;down.gif&quot;);this.style.borderColor=&quot;#3366FF&quot;;" onclick="incMonth()" onmousedown="clearTimeout(timeoutID1);timeoutID1=setTimeout(&quot;StartIncMonth()&quot;,500)" onmouseup="clearTimeout(timeoutID1);clearInterval(intervalID1)">&nbsp;<img id="changeRight" src="./down.gif" border="0">&nbsp;</span>&nbsp;<span id="spanMonth" style="border-style:solid;border-width:1;border-color:#3366FF;cursor:hand" onmouseover="swapImage(&quot;changeMonth&quot;,&quot;down.gif&quot;);this.style.borderColor=&quot;#88AAFF&quot;;" onmouseout="swapImage(&quot;changeMonth&quot;,&quot;down.gif&quot;);this.style.borderColor=&quot;#3366FF&quot;;" onclick="popUpMonth()"></span>&nbsp;<span id="spanYear" style="border-style:solid;border-width:1;border-color:#3366FF;cursor:hand" onmouseover="swapImage(&quot;changeYear&quot;,&quot;down.gif&quot;);this.style.borderColor=&quot;#88AAFF&quot;;" onmouseout="swapImage(&quot;changeYear&quot;,&quot;down.gif&quot;);this.style.borderColor=&quot;#3366FF&quot;;" onclick="popUpYear()"></span>&nbsp;</span></b></font></td><td align="right"><a href="javascript:hideCalendar()">Close</a></td></tr></tbody></table></td></tr><tr><td style="padding:5px" bgcolor="#ffffff"><span id="content"></span></td></tr><tr bgcolor="#f0f0f0"><td style="padding:5px" align="center"><span id="lblToday">Today is <a style="text-decoration:none;color:black;" href="javascript:monthSelected=monthNow;yearSelected=yearNow;constructCalendar();">Fri, 2018 - 7 - 20</a></span></td></tr></tbody></table></div><div id="selectMonth" style="z-index:+999;position:absolute;visibility:hidden;"></div><div id="selectYear" style="z-index:+999;position:absolute;visibility:hidden;"></div>
+		<script language="javascript" src="./gen.js.download"></script>
+
+		<script language="JavaScript" type="text/javascript">var today_s,today_e,ytoday_s,ttoday_e;var tweek_s,tweek_e,lweek_s,lwekk_e;var tmon_s,tmon_e,lmon_s,lmon_e;
+today_s='2018-07-20';today_e='2018-07-20';
+ytoday_s='2018-07-19';
+ytoday_e='2018-07-19';
+tweek_s='2018-07-16';
+tweek_e='2018-07-22';
+lweek_s='2018-07-09';
+lweek_e='2018-07-15';
+tmon_s='2018-07-01';
+tmon_e='2018-07-31';
+lmon_s='2018-06-01';
+lmon_e='2018-06-30';
+function OnPeriod(ids){		  if(ids==0)		  {	          	document.forms[0].sdate.value = '';			document.forms[0].edate.value = '';			document.forms[0].sdate.focus();		  }		  else		  if(ids==1)		  {		  	document.forms[0].sdate.value=today_s;			document.forms[0].edate.value=today_e;		  }		  else		  if(ids==2)		  {			document.forms[0].sdate.value=ytoday_s;			document.forms[0].edate.value=ytoday_e;		  }		  else		  if(ids==3)		  {			document.forms[0].sdate.value=tweek_s;			document.forms[0].edate.value=tweek_e;	          }		  else		  if(ids==4)	          {			document.forms[0].sdate.value=lweek_s;			document.forms[0].edate.value=lweek_e;		  }		  else		  if(ids==5)		  {			document.forms[0].sdate.value=tmon_s;			document.forms[0].edate.value=tmon_e;		  }		  else		  if(ids==6)		  {			document.forms[0].sdate.value=lmon_s;			document.forms[0].edate.value=lmon_e;		  }		  }		  </script>
+		
+                <span class="HeaderText">Query</span><br>
+                <hr>
+
+		<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+		<form name="mainform" method="post" target="_blank" action="http://192.168.1.201/csl/query?action=run" onsubmit="return uidcheck(document.mainform.uid,&quot;Please select User!&quot;);"></form>
+		<tbody><tr><td><table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+                <tbody><tr height="20"><td class="nrow" width="10%"><b>Date</b></td><td>&nbsp;From&nbsp;
+		<img src="./calc.png" onclick="popUpCalendar(this, mainform.sdate, &quot;yyyy-mm-dd&quot;)">&nbsp;<input class="inputbox" type="text" size="10" maxlength="10" name="sdate" value="2018-07-20">&nbsp;
+		To
+		&nbsp;<img src="./calc.png" onclick="popUpCalendar(this, mainform.edate, &quot;yyyy-mm-dd&quot;)">&nbsp;<input class="inputbox" type="text" maxlength="10" size="10" name="edate" value="2018-07-20">
+		</td></tr>
+		<tr height="5"><td colspan="2"></td></tr>
+		<tr height="20"><td class="nrow"><b>Period</b></td>
+		<td>&nbsp;<select name="period" onchange="OnPeriod(this.value);">
+                <option value="0">Define</option>
+                <option value="1" selected="">Today</option>
+                <option value="2">Yesterday</option>
+                <option value="3">Week</option>
+                <option value="4">Last Week</option>
+                <option value="5">Mon</option>
+                <option value="6">Last Mon</option></select>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<input class="inputbox" type="submit" value="Search">
+                </td></tr></tbody></table>
+		</td></tr><tr><td height="5"></td></tr><tr><td>
+		<div class="t_i"> 
+		<div class="t_i_h" id="hh"> 
+        	<div class="ee"> 
+            	<table cellpadding="2" cellspacing="2" border="0"> 
+             	<tbody><tr class="Table_Header"> 
+                <td class="titleLeft" width="5%"><a href="javascript:selectcheck(document.mainform.uid,0)"><img src="./sel.gif" border="0"></a></td> 
+		<td class="titleNormal" width="25%">Department Name</td>
+                <td class="titleNormal" width="15%">ID Number</td> 
+                <td class="titleNormal" width="10%">Name</td> 
+                <td class="titleormal" width="15%">Card</td> 
+                <td class="titleormal" width="15%">Group</td> 
+                <td class="titleNormal" width="15%">Privilege</td> 
+                </tr> </tbody></table> 
+        	</div> 
+		</div> 
+    		<div class="cc" id="cc" onscroll="list_t()"> 
+        	<table cellpadding="2" cellspacing="2" border="0">
+	
+            		<tbody><tr bgcolor="#ffffff"> 
+                	<td width="5%"><input type="checkbox" name="uid" value="43"></td> 
+			<td width="25%"></td>
+                	<td width="15%">43</td> 
+                	<td width="10%">yusuf</td> 
+                	<td width="15%">0</td> 
+                	<td width="15%">Group1</td> 
+                	<td width="15%">User</td>
+            		</tr> 
+		
+            		<tr bgcolor="#d1d7dA"> 
+                	<td width="5%"><input type="checkbox" name="uid" value="44"></td> 
+			<td width="25%"></td>
+                	<td width="15%">44</td> 
+                	<td width="10%">INSAN ARDIANSYAH</td> 
+                	<td width="15%">0</td> 
+                	<td width="15%">Group1</td> 
+                	<td width="15%">User</td>
+            		</tr> 
+		
+            		<tr bgcolor="#ffffff"> 
+                	<td width="5%"><input type="checkbox" name="uid" value="45"></td> 
+			<td width="25%"></td>
+                	<td width="15%">45</td> 
+                	<td width="10%">ARFIN NH</td> 
+                	<td width="15%">0</td> 
+                	<td width="15%">Group1</td> 
+                	<td width="15%">User</td>
+            		</tr> 
+		
+            		<tr bgcolor="#d1d7dA"> 
+                	<td width="5%"><input type="checkbox" name="uid" value="46"></td> 
+			<td width="25%"></td>
+                	<td width="15%">46</td> 
+                	<td width="10%">MAYASHA</td> 
+                	<td width="15%">0</td> 
+                	<td width="15%">Group1</td> 
+                	<td width="15%">User</td>
+            		</tr> 
+		
+            		<tr bgcolor="#ffffff"> 
+                	<td width="5%"><input type="checkbox" name="uid" value="47"></td> 
+			<td width="25%"></td>
+                	<td width="15%">47</td> 
+                	<td width="10%">ENDANG</td> 
+                	<td width="15%">0</td> 
+                	<td width="15%">Group1</td> 
+                	<td width="15%">User</td>
+            		</tr> 
+		
+            		<tr bgcolor="#d1d7dA"> 
+                	<td width="5%"><input type="checkbox" name="uid" value="48"></td> 
+			<td width="25%"></td>
+                	<td width="15%">48</td> 
+                	<td width="10%">NURDHIAN CAHYODARU</td> 
+                	<td width="15%">0</td> 
+                	<td width="15%">Group1</td> 
+                	<td width="15%">User</td>
+            		</tr> 
+		
+            		<tr bgcolor="#ffffff"> 
+                	<td width="5%"><input type="checkbox" name="uid" value="49"></td> 
+			<td width="25%"></td>
+                	<td width="15%">49</td> 
+                	<td width="10%">budi harja</td> 
+                	<td width="15%">0</td> 
+                	<td width="15%">Group1</td> 
+                	<td width="15%">User</td>
+            		</tr> 
+		
+            		<tr bgcolor="#d1d7dA"> 
+                	<td width="5%"><input type="checkbox" name="uid" value="50"></td> 
+			<td width="25%"></td>
+                	<td width="15%">50</td> 
+                	<td width="10%">andre</td> 
+                	<td width="15%">0</td> 
+                	<td width="15%">Group1</td> 
+                	<td width="15%">User</td>
+            		</tr> 
+		
+            		<tr bgcolor="#ffffff"> 
+                	<td width="5%"><input type="checkbox" name="uid" value="51"></td> 
+			<td width="25%"></td>
+                	<td width="15%">51</td> 
+                	<td width="10%">made</td> 
+                	<td width="15%">0</td> 
+                	<td width="15%">Group1</td> 
+                	<td width="15%">User</td>
+            		</tr> 
+		
+            		<tr bgcolor="#d1d7dA"> 
+                	<td width="5%"><input type="checkbox" name="uid" value="52"></td> 
+			<td width="25%"></td>
+                	<td width="15%">52</td> 
+                	<td width="10%">uned</td> 
+                	<td width="15%">0</td> 
+                	<td width="15%">Group1</td> 
+                	<td width="15%">User</td>
+            		</tr> 
+		
+            		<tr bgcolor="#ffffff"> 
+                	<td width="5%"><input type="checkbox" name="uid" value="53"></td> 
+			<td width="25%"></td>
+                	<td width="15%">53</td> 
+                	<td width="10%">purnama</td> 
+                	<td width="15%">0</td> 
+                	<td width="15%">Group1</td> 
+                	<td width="15%">User</td>
+            		</tr> 
+		
+            		<tr bgcolor="#d1d7dA"> 
+                	<td width="5%"><input type="checkbox" name="uid" value="54"></td> 
+			<td width="25%"></td>
+                	<td width="15%">54</td> 
+                	<td width="10%">HILMA TAUFIKA</td> 
+                	<td width="15%">0</td> 
+                	<td width="15%">Group1</td> 
+                	<td width="15%">User</td>
+            		</tr> 
+		
+            		<tr bgcolor="#ffffff"> 
+                	<td width="5%"><input type="checkbox" name="uid" value="55"></td> 
+			<td width="25%"></td>
+                	<td width="15%">55</td> 
+                	<td width="10%">HILMAN APRILIAN N</td> 
+                	<td width="15%">0</td> 
+                	<td width="15%">Group1</td> 
+                	<td width="15%">User</td>
+            		</tr> 
+		
+            		<tr bgcolor="#d1d7dA"> 
+                	<td width="5%"><input type="checkbox" name="uid" value="56"></td> 
+			<td width="25%"></td>
+                	<td width="15%">56</td> 
+                	<td width="10%">YANTI PUSPITASARI</td> 
+                	<td width="15%">0</td> 
+                	<td width="15%">Group1</td> 
+                	<td width="15%">User</td>
+            		</tr> 
+		
+            		<tr bgcolor="#ffffff"> 
+                	<td width="5%"><input type="checkbox" name="uid" value="57"></td> 
+			<td width="25%"></td>
+                	<td width="15%">57</td> 
+                	<td width="10%">ade arisandi FS</td> 
+                	<td width="15%">0</td> 
+                	<td width="15%">Group1</td> 
+                	<td width="15%">User</td>
+            		</tr> 
+		
+		</tbody></table></div></div>
+		</td></tr>
+		</tbody></table><table width="100%">
+		<tbody><tr height="20" align="center"><td><div class="t_i">
+		<input type="button" class="button" value="First Page" onclick="dataquery(&#39;/csl/query?last=20&#39;)">
+		<input type="button" class="button" value="Pre Page" onclick="dataquery(&#39;/csl/query?first=21&amp;last=41&#39;)">
+		<input type="button" class="button" value="Next Page" onclick="dataquery(&#39;/csl/query?first=41&amp;last=56&#39;)">
+		<input type="button" class="button" value="Last Page" onclick="dataquery(&#39;/csl/query?first=41&amp;last=56&#39;)">
+		</div></td></tr>
+		</tbody></table>
+		
+		<table width="100%">
+        	<tbody>
+        	<tr align="right">
+        	<td><br><br><b>Copyright © 2006-2009 All Right Reserved</b></td></tr></tbody></table>
+		
+	</body></html>

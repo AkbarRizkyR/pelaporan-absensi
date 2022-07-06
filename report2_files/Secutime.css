@@ -1,0 +1,109 @@
+.Menu {
+	BORDER-RIGHT: #336699 1px groove; FONT-WEIGHT: bold; FONT-SIZE: 14px; VERTICAL-ALIGN: middle; BORDER-LEFT: #333333 1px groove; COLOR: #ffffff; FONT-STYLE: normal; FONT-FAMILY: ËÎÌå,MS SONG,SimSun,tahoma,sans-serif; WHITE-SPACE: normal; BACKGROUND-COLOR: #333333; TEXT-ALIGN: left
+}
+.Menu_list {
+	BORDER-RIGHT: #336699 1px groove; FONT-WEIGHT: bold; FONT-SIZE: 14px; PADDING-BOTTOM: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT: #333333 1px groove; COLOR: #ffffff; FONT-STYLE: normal; FONT-FAMILY: ËÎÌå,MS SONG,SimSun,tahoma,sans-serif; WHITE-SPACE: normal; BACKGROUND-COLOR: #333333; TEXT-ALIGN: left
+}
+.Menu_titleFont {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: #ff0000; FONT-STYLE: normal; FONT-FAMILY: ËÎÌå,MS SONG,SimSun,tahoma,sans-serif; TEXT-DECORATION: none
+}
+.Menu_titleFont:active {
+	COLOR: #ff8800; TEXT-DECORATION: none
+}
+.Menu_titleFont:link {
+	COLOR: #ff8800; TEXT-DECORATION: none
+}
+.Menu_titleFont:visited {
+	COLOR: #ff8800; TEXT-DECORATION: none
+}
+.Menu_titleFont:hover {
+	COLOR: #cc0000; TEXT-DECORATION: none
+}
+.Table_Search {
+	WORD-SPACING: normal; FONT: bolder 14px ËÎÌå,MS SONG,SimSun,tahoma,sans-serif; VERTICAL-ALIGN: middle; TEXT-TRANSFORM: none; COLOR: #000000; WHITE-SPACE: nowrap; LETTER-SPACING: normal; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: center
+}
+.Table_Header {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 14px; WORD-SPACING: normal; FONT: bolder 12px ËÎÌå,MS SONG,SimSun,tahoma,sans-serif; VERTICAL-ALIGN: middle; TEXT-TRANSFORM: none; COLOR: #000000; WHITE-SPACE: nowrap; LETTER-SPACING: normal; BACKGROUND-COLOR: #ff9933; TEXT-ALIGN: center
+}
+.Table_List {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 14px; WORD-SPACING: normal; FONT: bolder 10px ËÎÌå,MS SONG,SimSun,tahoma,sans-serif; VERTICAL-ALIGN: middle; TEXT-TRANSFORM: none; COLOR: #000000; WHITE-SPACE: nowrap; LETTER-SPACING: normal; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: center
+}
+.Table_List_diff {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 14px; WORD-SPACING: normal; FONT: bolder 10px ËÎÌå,MS SONG,SimSun,tahoma,sans-serif; VERTICAL-ALIGN: middle; TEXT-TRANSFORM: none; COLOR: #000000; WHITE-SPACE: nowrap; LETTER-SPACING: normal; BACKGROUND-COLOR: #ffcc99; TEXT-ALIGN: center
+}
+TD {
+	FONT-SIZE: 14px; WORD-SPACING: normal; FONT-FAMILY: ËÎÌå,MS SONG,SimSun,tahoma,sans-serif; LETTER-SPACING: normal;
+}
+BODY {
+	FONT-SIZE: 14px; WORD-SPACING: normal; FONT-FAMILY: ËÎÌå,MS SONG,SimSun,tahoma,sans-serif; LETTER-SPACING: normal; 
+}
+.HeaderText {
+	PADDING-BOTTOM: 0px; WORD-SPACING: normal; FONT: bolder 18px ËÎÌå,MS SONG,SimSun,tahoma,sans-serif; VERTICAL-ALIGN: middle; TEXT-TRANSFORM: none; WHITE-SPACE: pre; LETTER-SPACING: normal; TEXT-ALIGN: justify
+}
+.TipText {
+	FONT: bolder 14px ËÎÌå,MS SONG,SimSun,tahoma,sans-serif; COLOR:#3d111d;
+}
+
+.Timetable_header {
+	BORDER-RIGHT: #ff6600 0px solid; BORDER-TOP: #ff6600 0px solid; WORD-SPACING: normal; FONT: 14px ËÎÌå,MS SONG,SimSun,tahoma,sans-serif; VERTICAL-ALIGN: middle; TEXT-TRANSFORM: none; BORDER-LEFT: #ff6600 0px solid; COLOR: #ffffff; BORDER-BOTTOM: #ff6600 2px solid; WHITE-SPACE: pre; LETTER-SPACING: normal; BACKGROUND-COLOR: #ff6600; TEXT-ALIGN: justify
+}
+.Timetable {
+	WORD-SPACING: normal; FONT: bold 14px ËÎÌå,MS SONG,SimSun,tahoma,sans-serif; VERTICAL-ALIGN: middle; TEXT-TRANSFORM: none; COLOR: #000000; WHITE-SPACE: pre; LETTER-SPACING: normal; BACKGROUND-COLOR: #ffffff; TEXT-ALIGN: justify
+}
+.Timetable_diff {
+	WORD-SPACING: normal; FONT: bold 14px ËÎÌå,MS SONG,SimSun,tahoma,sans-serif; VERTICAL-ALIGN: middle; TEXT-TRANSFORM: none; COLOR: #000000; WHITE-SPACE: pre; LETTER-SPACING: normal; BACKGROUND-COLOR: #ffcc99; TEXT-ALIGN: justify
+}
+.TimeEnable {
+	FONT-WEIGHT: bold; COLOR: #000000; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: ËÎÌå,MS SONG,SimSun,tahoma,sans-serif; FONT-VARIANT: normal
+}
+.TimeDisable {
+	FONT-WEIGHT: bold; COLOR: #999999; LINE-HEIGHT: normal; FONT-STYLE: normal; FONT-FAMILY: ËÎÌå,MS SONG,SimSun,tahoma,sans-serif; FONT-VARIANT: normal
+}
+.StatusON {
+	FONT: 18px ËÎÌå,MS SONG,SimSun,tahoma,sans-serif; COLOR: #006600
+}
+.StatusOFF {
+	FONT: 18px ËÎÌå,MS SONG,SimSun,tahoma,sans-serif; COLOR: #cc0000
+}
+.TableText1 {
+	FONT: 600 14px ËÎÌå,MS SONG,SimSun,tahoma,sans-serif; COLOR: #000000; TEXT-ALIGN: left
+}
+.nrow {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; VERTICAL-ALIGN: middle; COLOR: #000000; BACKGROUND-COLOR: #ffcc99;
+}
+.rowHeader {
+	FONT-SIZE: 14px; PADDING-BOTTOM: 5px; COLOR: #660000; PADDING-TOP: 5px
+}
+.inputbox {
+	BORDER-RIGHT: orange 1px solid; BORDER-TOP: orange 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 13px; BORDER-LEFT: orange 1px solid; BORDER-BOTTOM: orange 1px solid; BACKGROUND-COLOR: white;height:22px;
+}
+.inputboxex {
+        BORDER-RIGHT: orange 1px solid; BORDER-TOP: orange 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 12px; BORDER-LEFT: orange 1px solid; BORDER-BOTTOM: orange 1px solid; BACKGROUND-COLOR: white;height:20px;
+}
+.hint {
+	FONT-SIZE: x-small; COLOR: blue
+}
+.error {
+	COLOR: red
+}
+.status {
+	BORDER-RIGHT: #cccccc groove; BORDER-TOP: #cccccc groove; FONT-WEIGHT: bold; FONT-SIZE: 14px; WORD-SPACING: normal; BORDER-LEFT: #cccccc groove; COLOR: #333333; BORDER-BOTTOM: #cccccc groove; FONT-FAMILY: ËÎÌå,MS SONG,SimSun,tahoma,sans-serif; BACKGROUND-COLOR: #ffcc66
+}
+#timetb TD {
+	PADDING-LEFT: 5px; VERTICAL-ALIGN: top
+}
+#timetb {
+	MARGIN-TOP: 50px; MARGIN-LEFT: 50px; VERTICAL-ALIGN: top
+}
+#hint {
+	FONT-SIZE: small; COLOR: blue
+}
+.box {
+	PADDING-LEFT: 2px; BORDER-LEFT-COLOR: orange; BORDER-BOTTOM-COLOR: orange; BORDER-TOP-STYLE: solid; BORDER-TOP-COLOR: orange; BORDER-RIGHT-STYLE: solid; BORDER-LEFT-STYLE: solid; BACKGROUND-COLOR: white; BORDER-RIGHT-COLOR: orange; BORDER-BOTTOM-STYLE: solid
+}
+#title {
+	PADDING-LEFT: 0px; FONT-WEIGHT: bold; PADDING-BOTTOM: 15px; COLOR: black
+}
+UL {
+	MARGIN-TOP: 2px; PADDING-LEFT: 20px; MARGIN-BOTTOM: 2px; MARGIN-LEFT: 0px
+}

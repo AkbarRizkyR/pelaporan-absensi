@@ -1,0 +1,318 @@
+var gAppName,gVersion; 
+
+function CheckCookie(text)
+{
+        var cookieEnabled=(navigator.cookieEnabled)? true : false;
+        if (typeof navigator.cookieEnabled=='undefined' && !cookieEnabled)
+        {
+                document.cookie='testcookie';
+                cookieEnabled=(document.cookie=='testcookie')? true : false;
+                document.cookie='';
+        }
+        if(!cookieEnabled)
+        {
+                window.alert(text);
+                return false;
+        }
+        return true;
+}
+
+function fGetUserAgen()
+{
+        var sUserAgent = window.navigator.userAgent;
+        var sAppName = '';
+        var sVersion = '';
+        if(sUserAgent.indexOf('MSIE')>-1)
+        {
+                sAppName = 'msie';
+                sVersion = sUserAgent.replace(/.+MSIE/gi,'').replace(/;.+/gi,'') - 0;
+        }
+        else
+        if(sUserAgent.toUpperCase().indexOf('FIREFOX')>-1)
+        {
+                sAppName = 'firefox';
+                sVersion = sUserAgent.replace(/.+Firefox\//gi,'').replace(/\(.*\)/g,'') - 0;
+        }
+        else
+	 if(sUserAgent.toUpperCase().indexOf('NETSCAPE')>-1)
+        {
+                sAppName = "netscape";
+                sVersion = sUserAgent.replace(/.+NETSCAPE\//gi,'').replace(/\(.*\)/g,'') - 0;
+        }
+        gAppName = sAppName;
+        gVersion = sVersion;
+}
+
+function InputEvent(stype,oinput)
+{
+	switch (stype)
+	{
+		case 'focus' :
+			oinput.isfocus = true;
+			oinput.style.backgroundColor='#DDFFDD';
+		case 'mouseover' :
+			oinput.style.borderColor = '#99E300';
+			break;
+		case 'blur' :
+			oinput.isfocus = false;
+			oinput.style.borderColor = '#99E300';
+			oinput.style.backgroundColor="";
+		case 'mouseout' :
+			if(!oinput.isfocus)
+			{
+				oinput.style.borderColor='#A1BCA3';
+			}
+			break;
+	}
+}
+
+function ComboBox(InputID)
+{
+	var T=this;
+	var EventDeelStr=" if(evt==null)evt=window.event;"+" var src;if(evt.srcElement!=null){src=evt.srcElement;}else{	src=evt.target;}"
+	this.InputID=(InputID==null?null:InputID);
+	this.relItem=document.getElementById(String(T.InputID));
+	T.MenuHeight=200;
+	this.Menu=null;
+	this.mOnMenu=false;
+	this.cellonclick=function(evt){eval(EventDeelStr);T.relItem.value=src.innerHTML;T.hide(1);}
+	
+	T.CreateMenu=function()
+	{
+		
+		T.Items=T.relItem.getAttribute("Options").split(",");
+		if(T.relItem.MenuHeight!=null && parseInt(T.relItem.MenuHeight)>0)
+			T.MenuHeight=T.relItem.MenuHeight
+		
+		T.Menu=document.createElement("<div>");
+		T.relItem.parentNode.insertBefore(T.Menu,null)
+		with(T.Menu.style)
+		{
+			position="absolute";
+			visibility="hidden";
+			width=T.relItem.offsetWidth;
+			border="solid 1px #999999";
+			overflowY="Auto"
+			padding=5;
+			backgroundColor="#ffffff"
+		}
+		T.Menu.onmouseover=function(){T.mOnMenu=true;}
+		T.Menu.onmouseout=function(){T.relItem.focus();T.mOnMenu=false;}
+		
+		var tbl=document.createElement("TABLE");
+		
+		var row,cell;
+		for(var i=0;i<T.Items.length;i++)
+		{
+			row=tbl.insertRow(i);
+			cell=row.insertCell(0);
+			cell.onmouseover=function(evt){eval(EventDeelStr);src.style.backgroundColor="#ccccff"};
+			cell.onmouseout=function(evt){eval(EventDeelStr);src.style.backgroundColor=""};
+			cell.onmousedown=T.cellonclick;
+			cell.innerHTML=T.Items[i];
+			cell.style.cursor="hand";
+			cell.style.fontSize="12px";
+			cell.style.border="0";
+		}
+		T.Menu.insertBefore(tbl,null);
+		tbl.width="100%";
+		tbl.style.backgroundColor="#ffffff"
+		if(tbl.offsetHeight>T.MenuHeight)
+		{
+			T.Menu.style.height=T.MenuHeight;
+		}
+		
+	}
+	this.show=function()
+	{
+		if(T.Menu==null)
+			T.CreateMenu();
+		var offset=getoffset(T.relItem);
+		T.Menu.style.left=offset.left;
+		T.Menu.style.top=offset.top+parseInt(T.relItem.offsetHeight);
+		T.Menu.style.visibility="visible";
+
+	}
+
+	var getoffset=function(e)
+	{  
+		 var t=e.offsetTop;  
+		 var l=e.offsetLeft;  
+		 while(e=e.offsetParent) 
+		 {  
+			 t+=e.offsetTop;  
+			 l+=e.offsetLeft;  
+		 }  
+		 var rec = new Object();
+		 rec.left= parseInt(l); 
+		 rec.top= parseInt(t); 
+		 return rec 
+	}
+	this.hide=function(force)
+	{
+		if(T.mOnMenu &&force==null) return;
+		
+		T.Menu.style.visibility="hidden";
+	};
+	this.relItem.onclick=T.show;
+	this.relItem.onblur=T.hide;
+}
+
+var aCh="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var dCh="0123456789";
+var asCh=aCh + dCh + "!\"#$%&'()*+,-./:;<=>?@[\]^_`{}~";
+
+function isNum(S)
+{
+	var AlphaNum=dCh;
+	if(S=='') 
+		return false;
+	else
+	for (var i=0; i < S.length; i++)
+	{
+		if (AlphaNum.indexOf(S.charAt(i)) == -1)
+			return false;
+	}
+	return true;
+}
+
+function isStr(S)
+{
+	if(S=='') 
+		return false;
+	else
+	for (var i=0; i < S.length; i++)
+	{
+		if (asCh.indexOf(S.charAt(i)) == -1)
+			return false;
+	}
+	return true;
+}
+
+function StartLoading()
+{
+var x=window.innerWidth,y=window.parent.innerHeight;
+var s;
+if (document.all)
+{
+	x=window.document.body.clientWidth;
+	y=window.parent.document.body.clientHeight;
+	if (!y)
+		y=window.document.body.clientHeight;
+	s=ProgressBarDiv.style;
+}
+else
+{
+	if (document.getElementById)
+		s=document.getElementById('ProgressBarDiv').style;
+	else
+		s=document.layers['ProgressBarDiv'];
+}
+if (s)
+{
+	if (x)
+		s.left=(x-250)/2;
+	if (y)
+		s.top=(y-100)/2;
+	s.visibility='visible';
+}
+}
+
+function CloseLoading()
+{
+var targelem = document.getElementById('ProgressBarDiv');
+if(targelem != null)
+{
+	targelem.style.display='none';
+	targelem.style.visibility='hidden';
+}
+}
+
+function SelectBox(ids)
+{
+var targelem = document.getElementById('BarDiv');
+if(targelem != null)
+{
+	if(ids==0)
+	{
+        	targelem.style.display='none';
+       	targelem.style.visibility='hidden';
+	}
+	else
+	{
+		targelem.style.display='';
+		targelem.style.visibility='visible';
+	}
+}
+}
+
+var highlighting;
+var theobject;
+
+function high(which2)
+{
+	theobject=which2
+	highlighting=setInterval("highlightit(theobject)",50)
+}
+
+function low(which2)
+{
+	clearInterval(highlighting)
+	which2.filters.alpha.opacity=60
+}
+
+function highlightit(cur2)
+{
+	if (cur2.filters.alpha.opacity<100)
+		cur2.filters.alpha.opacity+=10
+	else 
+	if (window.highlighting)
+		clearInterval(highlighting)
+}
+
+function uidcheck(field,sinfo)
+{
+	flag=false;
+	if(field.length==undefined)
+	{
+		if(field[0].checked == true)
+			flage=true;
+	}
+	else
+	{
+		for(i=0 ; i < field.length; i++)
+			if(field[i].checked == true)
+				flag=true;
+	}
+
+	if(flag==false)
+		alert(sinfo);
+	return flag;
+}
+
+function selectcheck(field,checkflag) 
+{
+	if (checkflag == 1) 
+	{
+		for (i = 0; i < field.length; i++) 
+		{
+			field[i].checked = true;
+		}
+		return; 
+	}
+	else 
+	{
+		for (i = 0; i < field.length; i++) 
+		{
+			if (field[i].checked == false) field[i].checked=true;else field[i].checked=false; 
+		}
+		return; 
+	}
+}
+
+function dataquery(value)
+{
+	window.location.href=value;
+}
+
+window.onerror = function(){return true;}
